@@ -68,7 +68,7 @@ export class WordMachineComponent {
         // push the number into the stack
         stack.push(Number(curr));
         var currentStack = stack.join();
-        console.log(currentStack);
+        console.log('input:', curr, ' output:', currentStack);
       } else {
         // check if the operation command is valid
         if (curr == 'POP' || curr == 'DUP' || curr == '+' || curr == '-') {
@@ -78,7 +78,7 @@ export class WordMachineComponent {
               if (stack.length > 0) {
                 stack.pop();
                 var currentStack = stack.join();
-                console.log(currentStack);
+                console.log('input:', curr, ' output:', currentStack);
               } else {
                 this.error = true;
                 return 'error';
@@ -92,7 +92,7 @@ export class WordMachineComponent {
                 stack.push(last);
                 //console output
                 var currentStack = stack.join();
-                console.log(currentStack);
+                console.log('input:', curr, ' output:', currentStack);
               } else {
                 this.error = true;
                 return 'error';
@@ -107,7 +107,7 @@ export class WordMachineComponent {
                 stack.push(element);
                 //console output
                 var currentStack = stack.join();
-                console.log(currentStack);
+                console.log('input:', curr, ' output:', currentStack);
               } else {
                 this.error = true;
                 return 'error';
@@ -122,7 +122,7 @@ export class WordMachineComponent {
                 stack.push(element);
                 //console output
                 var currentStack = stack.join();
-                console.log(currentStack);
+                console.log('input:', curr, ' output:', currentStack);
               } else {
                 this.error = true;
                 return 'error';
