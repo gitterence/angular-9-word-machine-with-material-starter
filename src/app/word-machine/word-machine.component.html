@@ -1,0 +1,32 @@
+<div class="title">
+  <p>{{instruction}}</p>
+</div>
+
+<div class="command-input-area">
+
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Command input</mat-label>
+    <textarea matInput
+              [(ngModel)]="commands"
+              placeholder="Ex. '23 DUP 4 POP 5 DUP + DUP + -'"></textarea>
+  </mat-form-field>
+
+</div>
+
+<div class="submit-button">
+
+  <button mat-raised-button color='primary' (click)="processCommands()" [disabled]="isLoading ||!commands">
+    Send
+  </button>
+
+</div>
+
+
+<div class="result" *ngIf="showResult">
+  <mat-list>
+    <mat-list-item *ngFor="let command of commandArray">
+      {{command}}
+    </mat-list-item>
+  </mat-list>
+
+</div>
