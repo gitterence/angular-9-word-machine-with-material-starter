@@ -15,7 +15,7 @@
 
 <div class="submit-button">
 
-  <button mat-raised-button color='primary' (click)="processCommands()" [disabled]="isLoading ||!commands">
+  <button mat-raised-button color='primary' (click)="sendCommands()" [disabled]="isLoading ||!commands">
     Send
   </button>
 
@@ -23,10 +23,15 @@
 
 
 <div class="result" *ngIf="showResult">
-  <mat-list>
-    <mat-list-item *ngFor="let command of commandArray">
-      {{command}}
+  <!-- <mat-list>
+    <mat-list-item *ngFor="let output of outputArray">
+      {{output}}
     </mat-list-item>
-  </mat-list>
+  </mat-list> -->
+  <p>{{output}}</p>
 
+</div>
+
+<div class="error" *ngIf="error">
+  <p>{{errorMessage}}</p>
 </div>
