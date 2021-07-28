@@ -68,7 +68,7 @@ export class WordMachineComponent {
         stack.push(Number(curr));
         console.log(stack);
       } else {
-        // check if the operation is valid
+        // check if the operation command is valid
         if (curr == 'POP' || curr == 'DUP' || curr == '+' || curr == '-') {
           // process operation
           switch (curr) {
