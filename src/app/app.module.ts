@@ -6,19 +6,15 @@ import { AppComponent } from './app.component';
 
 import { PortalModule } from '@angular/cdk/portal';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
 import { MatRippleModule } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatSortModule } from '@angular/material/sort';
-import { MatTableModule } from '@angular/material/table';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { WordMachineComponent } from './word-machine/word-machine.component';
 
@@ -34,19 +30,15 @@ import { WordMachineComponent } from './word-machine/word-machine.component';
   imports: [
     BrowserModule,
     FormsModule,
-    MatAutocompleteModule,
-    MatBottomSheetModule,
     MatButtonModule,
-    MatButtonToggleModule,
-    MatDividerModule,
-    MatGridListModule,
     MatIconModule,
     MatInputModule,
     MatListModule,
     MatRippleModule,
+    MatDividerModule,
     MatSnackBarModule,
-    MatSortModule,
-    MatTableModule,
+    MatBottomSheetModule,
+    MatButtonToggleModule,
     PortalModule,
     ScrollingModule
   ]

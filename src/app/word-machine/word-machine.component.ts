@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'word-machine',
@@ -66,7 +67,8 @@ export class WordMachineComponent {
       if (this.isNumber(curr)) {
         // push the number into the stack
         stack.push(Number(curr));
-        console.log(stack);
+        var currentStack = stack.join();
+        console.log(currentStack);
       } else {
         // check if the operation command is valid
         if (curr == 'POP' || curr == 'DUP' || curr == '+' || curr == '-') {
@@ -75,6 +77,8 @@ export class WordMachineComponent {
             case 'POP':
               if (stack.length > 0) {
                 stack.pop();
+                var currentStack = stack.join();
+                console.log(currentStack);
               } else {
                 this.error = true;
                 return 'error';
@@ -84,7 +88,11 @@ export class WordMachineComponent {
             case 'DUP':
               if (stack.length > 0) {
                 let last = stack[stack.length - 1];
+                console.log(last);
                 stack.push(last);
+                //console output
+                var currentStack = stack.join();
+                console.log(currentStack);
               } else {
                 this.error = true;
                 return 'error';
@@ -92,9 +100,33 @@ export class WordMachineComponent {
               break;
 
             case '+':
+              if (stack.length >= 2) {
+                let lastOne = stack.pop();
+                let lastSecond = stack.pop();
+                let element = lastOne + lastSecond;
+                stack.push(element);
+                //console output
+                var currentStack = stack.join();
+                console.log(currentStack);
+              } else {
+                this.error = true;
+                return 'error';
+              }
               break;
 
             case '-':
+              if (stack.length >= 2) {
+                let lastOne = stack.pop();
+                let lastSecond = stack.pop();
+                let element = lastSecond - lastOne;
+                stack.push(element);
+                //console output
+                var currentStack = stack.join();
+                console.log(currentStack);
+              } else {
+                this.error = true;
+                return 'error';
+              }
               break;
           }
         } else {
@@ -103,7 +135,14 @@ export class WordMachineComponent {
         }
       }
     }
-    res = stack.join();
+
+    if (stack.length === 0) {
+      res = 'stack is empty';
+    }
+
+    if (stack.length > 0) {
+      res = stack[stack.length - 1];
+    }
 
     return res;
   }

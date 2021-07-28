@@ -1,6 +1,11 @@
 <div class="title">
   <p>{{instruction}}</p>
 </div>
+<div style="margin:8px;">
+  <p style="color: #4CAF50;">hint: open console to see full result of each operation</p>
+</div>
+
+<mat-divider></mat-divider>
 
 <div class="command-input-area">
 
@@ -23,15 +28,21 @@
 
 
 <div class="result" *ngIf="showResult">
+
+  <mat-divider></mat-divider>
   <!-- <mat-list>
     <mat-list-item *ngFor="let command of commandArray">
       {{command}}
     </mat-list-item>
   </mat-list> -->
-  <p>{{output}}</p>
+  <span>
+    Output is: 
+      <p>{{output}}</p>
+  </span>
 
 </div>
 
 <div class="error" *ngIf="error">
-  <p>{{errorMessage}}</p>
+  <mat-divider></mat-divider>
+  <p style="color: #cc3300;">{{errorMessage}}</p>
 </div>
