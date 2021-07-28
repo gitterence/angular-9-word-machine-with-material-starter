@@ -73,9 +73,22 @@ export class WordMachineComponent {
           // process operation
           switch (curr) {
             case 'POP':
+              if (stack.length > 0) {
+                stack.pop();
+              } else {
+                this.error = true;
+                return 'error';
+              }
               break;
 
             case 'DUP':
+              if (stack.length > 0) {
+                let last = stack[stack.length - 1];
+                stack.push(last);
+              } else {
+                this.error = true;
+                return 'error';
+              }
               break;
 
             case '+':
